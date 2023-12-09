@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        <link rel="icon" type="image/x-icon" href="logo.png">
+        <link rel="stylesheet" href="style.css">
+    <title>Products | Buy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #ffffff, #ffffff);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #ffffff, #ffffff);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            width: 300px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 0px 47px -20px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 0px 0px 47px -20px rgba(0, 0, 0, 1);
+            box-shadow: 0px 0px 47px -20px rgba(0, 0, 0, 1);
+            margin: 60px 0px 60px 0px;
+            background-color: #fff;
+        }
+
+        .product-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            top: -90px;
+            padding: 10px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+            border-radius: 10px;
+        }
+
+        .product-image:hover img {
+            transform: scale(1.1);
+        }
+        
+        .product-details {
+            padding: 20px;
+            margin-top: -90px;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .product-details.expand {
+            height: auto;
+        }
+
+        .product-details .expand-button {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .product-details .expand-button:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .add-to-cart,
+        .compare {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .add-to-cart {
+            background-color: #666;
+        }
+
+        .compare {
+            background-color: #60638d;
+            color: #fff;
+        }
+
+        .add-to-cart:hover,
+        .compare:hover {
+            opacity: 0.8;
+        }
+
+        .credit a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 800;
+        }
+
+        .credit {
+            color: #000;
+            text-align: center;
+            margin-top: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+    </style>
+</head>
+
+<!-- Navbar -->
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="logo.png" style="width: 3cm; height: 1.5cm;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav><br>
+
+    <div class="container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="prr5.png" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Marquise Shape CVD Diamond</h2>
+                <p class="product-price">$599</p>
+                <p class="product-description">Designed for maximum sparkle, Round Brilliant is by far the most popular diamond cut. The ultimate classic...</p>
+                <div class="buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare">Compare</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="prr6.png" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Pear Shape CVD Diamond</h2>
+                <p class="product-price">$999</p>
+                <p class="product-description">One of the classics of diamond shapes, Emeralds are known for their elegance and exquisite beauty...</p>
+                <div class="buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare">Compare</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="prr7.png" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Oval Shape CVD Diamond</h2>
+                <p class="product-price">$1199</p>
+                <p class="product-description">Princess is a contemporary cut with square lines, sharp corners, and high degree of brilliance...</p>
+                <div class="buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare">Compare</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="prr8.png" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Asscher Shape CVD Diamond</h2>
+                <p class="product-price">$9.99</p>
+                <p class="product-description">A round-cornered, squarish-rectangular, pillow resembling shape with strong romantic appeal...</p>
+                <div class="buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare">Compare</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="pro1.webp" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Round Shape CVD Diamond</h2>
+                <p class="product-price">$599</p>
+                <p class="product-description">Designed for maximum sparkle, Round Brilliant is by far the most popular diamond cut. The ultimate classic...</p>
+                <div class="buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare">Compare</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="pro2.webp" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Purple Shade Round CVD Diamond</h2>
+                <p class="product-price">$999</p>
+                <p class="product-description">One of the classics of diamond shapes, Emeralds are known for their elegance and exquisite beauty...</p>
+                <div class="buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare">Compare</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="prr3.png" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Princess Shape CVD Diamond</h2>
+                <p class="product-price">$1199</p>
+                <p class="product-description">Princess is a contemporary cut with square lines, sharp corners, and high degree of brilliance...<br></p>
+                <div class="buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare">Compare</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="prr4.png" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Cushion Shape CVD Diamond</h2>
+                <p class="product-price">$9.99</p>
+                <p class="product-description">A round-cornered, squarish-rectangular, pillow resembling shape with strong romantic appeal...<br></p>
+                <div class="buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare">Compare</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="credit">Made with <span style="color:tomato;font-size:20px;">❤ </span>by<a
+            href="https://www.learningrobo.com/"> Synergy Technocrats</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <img src="logo.png" alt="" class="logo">
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p class="rights-text">© 2023 Created By <b>Sunny Padariya</b> All Rights Reserved.</p>
+            </div>
+
+            <div class="right-col">
+                <h1>Our Newsletter</h1>
+                <div class="border"></div>
+                <p>Enter Your Email to get our news and updates.</p>
+                <form action="" class="newsletter-form">
+                    <input type="text" class="txtb" placeholder="Enter Your Email">
+                    <input type="submit" class="btn" value="submit">
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
